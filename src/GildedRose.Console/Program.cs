@@ -95,7 +95,7 @@ namespace GildedRose.Console
                         }
                     }
                 }
-
+				
                 if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
                 {
                     Items[i].SellIn = Items[i].SellIn - 1;
