@@ -2,17 +2,17 @@
 
 namespace GildedRose.Console
 {
-    public class StockManager                    //will return to internal once I finish tests
+    public class InventoryManager		//Return to "internal" once verified
     {
-        public IList<Item> Stock;           //will return to private once I finish tests
+        public IList<Item> Inventory;	//Return to "private" once verified
 
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             System.Console.WriteLine("OMGHAI!");
 
-            var app = new StockManager()
+            var app = new InventoryManager()
                                     {
-                                        Stock = new List<Item>
+                                        Inventory = new List<Item>
                                           {
                                               new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                                               new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
@@ -28,15 +28,15 @@ namespace GildedRose.Console
                                           }
                                     };
 
-            app.UpdateQuality();
+            app.UpdateInventory();
 
             System.Console.ReadKey();
 
         }
 
-		public void UpdateQuality()
+		public void UpdateInventory()
         {
-            foreach (var Good in Stock)
+            foreach (var Good in Inventory)
             {
 				Good.SellIn = AdjustSellInByGood(Good.Name, Good.SellIn);
 				Good.Quality = AdjustQualityByGood(Good.Name, Good.SellIn, Good.Quality);
@@ -60,7 +60,9 @@ namespace GildedRose.Console
 					if (SellIn < 5) return BoundedQualityAdjust(Quality, 3);
 					if (SellIn < 10) return BoundedQualityAdjust(Quality, 2);
 					return BoundedQualityAdjust(Quality, 1);
-										
+				case "Conjured Mana Cake":
+					if (SellIn < 0) return BoundedQualityAdjust(Quality, -4);
+					return BoundedQualityAdjust(Quality, -2);
 				default:
 					if (SellIn < 0) return BoundedQualityAdjust(Quality, -2);
 					return BoundedQualityAdjust(Quality, -1);
