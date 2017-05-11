@@ -15,7 +15,7 @@ namespace GildedRose.Tests
         [Fact]
         public void ItemEntry()
         {
-            Program test = new Program()
+            StockManager test = new StockManager()
             {
                 Stock = new List<Item>
                 {
@@ -66,7 +66,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void RegularItemAgingInDate()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -106,7 +106,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void RegularItemAgingOutDateEven()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -147,7 +147,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void RegularItemAgingOutDateOdd()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -188,7 +188,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void RegularItemAgingInDateMinQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -225,7 +225,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void RegularItemAgingOutDateEvenMinQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -262,7 +262,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void RegularItemAgingOutDateOddMinQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -301,7 +301,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void AgedBrieAgingInDate()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -330,7 +330,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void AgedBrieAgingOutDateEven()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -360,7 +360,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void AgedBrieAgingOutDateOdd()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -390,7 +390,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void AgedBrieAgingInDateMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -420,7 +420,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void AgedBrieAgingOutDateEvenMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -450,7 +450,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void AgedBrieAgingOutDateOddMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -482,7 +482,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void SulfurasAging()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -514,7 +514,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverTen()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -549,7 +549,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverFiveEven()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -588,7 +588,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverFiveOdd()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -627,7 +627,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverZeroZero()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -665,7 +665,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverZeroOne()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -703,7 +703,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverZeroTwo()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -741,7 +741,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOutDate()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -775,7 +775,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverTenMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -810,7 +810,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverFiveEvenMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -854,7 +854,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverFiveOddMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -899,7 +899,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverZeroZeroMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -944,7 +944,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverZeroOneMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
@@ -989,7 +989,7 @@ namespace GildedRose.Tests
 		[Fact]
 		public void PassAgingOverZeroTwoMaxQuality()
 		{
-			Program test = new Program()
+			StockManager test = new StockManager()
 			{
 				Stock = new List<Item>
 					{
