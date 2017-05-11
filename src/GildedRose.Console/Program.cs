@@ -38,14 +38,6 @@ namespace GildedRose.Console
         {
             foreach (var Good in Stock)
             {
-				/*
-				//Adjust Quality value based on the Good
-				AdjustQualityByGood(Good);
-
-				//Adjust SellIn value based on the Good
-				AdjustSellInByGood(Good);
-				*/
-
 				//Standard Quality Adjustment
 				if (Good.Name != "Aged Brie" && Good.Name != "Backstage passes to a TAFKAL80ETC concert")
 				{
@@ -86,7 +78,8 @@ namespace GildedRose.Console
 
 				//SellIn adjustment
 				Good.SellIn = AdjustSellInByGood(Good.Name, Good.SellIn);
-
+				Good.Quality = AdjustQualityByGood(Good.Name, Good.SellIn, Good.Quality);
+				
 				//Adjustment if Good IS/HAS-JUST-GONE Out-of-Date
 				if (Good.SellIn < 0)
 				{
@@ -115,9 +108,41 @@ namespace GildedRose.Console
 						}
 					}
 				}
+				
 			}
         }
-
+		private int AdjustQualityByGood(string Name, int SellIn, int Quality)
+		{
+			switch (Name)
+			{
+				//Move each one individually over to this function and verify behaviour at each one
+				case "Sulfuras, Hand of Ragnaros":
+					return Quality;
+				/*case "Aged Brie":
+					if (SellIn < 0) return BoundedQualityAdjust(Quality, 2);
+					return BoundedQualityAdjust(Quality, 1);
+				*/
+				/*case "Backstage passes to a TAFKAL80ETC concert":
+					
+					if (SellIn > 10) return BoundedQualityAdjust(Quality, 1);
+					if (SellIn > 5) return BoundedQualityAdjust(Quality, 2);
+					if (SellIn > 0) return BoundedQualityAdjust(Quality, 3);
+					return 0;
+					
+					if (SellIn < 0) return 0;
+					if (SellIn < 6) return BoundedQualityAdjust(Quality, 3);
+					if (SellIn < 11) return BoundedQualityAdjust(Quality, 2);
+					return BoundedQualityAdjust(Quality, 1);
+					return Quality;
+				*/
+				default:
+					/*
+					if (SellIn < 0) return BoundedQualityAdjust(Quality, -2);
+					return BoundedQualityAdjust(Quality, -1);
+					*/
+					return Quality;
+			}
+		}
 
 		//Decides how to change the Good Quality based on the requested change
 		//I would ideally try to put this in the Item class but I'm not allowed
