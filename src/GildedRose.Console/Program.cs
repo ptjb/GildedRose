@@ -49,9 +49,7 @@ namespace GildedRose.Console
 						}
 					}
 				}
-				else
-				{
-					if (Good.Quality < 50)
+				else if (Good.Name != "Aged Brie" && Good.Quality < 50)
 					{
 						Good.Quality += 1;
 
@@ -74,7 +72,7 @@ namespace GildedRose.Console
 							}
 						}
 					}
-				}
+				
 
 				//SellIn adjustment
 				Good.SellIn = AdjustSellInByGood(Good.Name, Good.SellIn);
@@ -100,13 +98,7 @@ namespace GildedRose.Console
 							Good.Quality = 0;
 						}
 					}
-					else
-					{
-						if (Good.Quality < 50)
-						{
-							Good.Quality += 1;
-						}
-					}
+					
 				}
 				
 			}
@@ -118,10 +110,10 @@ namespace GildedRose.Console
 				//Move each one individually over to this function and verify behaviour at each one
 				case "Sulfuras, Hand of Ragnaros":
 					return Quality;
-				/*case "Aged Brie":
+				case "Aged Brie":
 					if (SellIn < 0) return BoundedQualityAdjust(Quality, 2);
 					return BoundedQualityAdjust(Quality, 1);
-				*/
+				
 				/*case "Backstage passes to a TAFKAL80ETC concert":
 					
 					if (SellIn > 10) return BoundedQualityAdjust(Quality, 1);
