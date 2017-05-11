@@ -40,7 +40,7 @@ namespace GildedRose.Console
             {
 				//Standard Quality Adjustment
 				
-				if (Good.Name == "Backstage passes to a TAFKAL80ETC concert")
+				/*if (Good.Name == "Backstage passes to a TAFKAL80ETC concert")
 					{
 						Good.Quality = BoundedQualityAdjust(Good.Quality, 1);
 
@@ -54,7 +54,7 @@ namespace GildedRose.Console
 							Good.Quality = BoundedQualityAdjust(Good.Quality, 1);
 						}
 						
-					}
+					}*/
 				
 
 				//SellIn adjustment
@@ -62,11 +62,11 @@ namespace GildedRose.Console
 				Good.Quality = AdjustQualityByGood(Good.Name, Good.SellIn, Good.Quality);
 				
 				//Adjustment if Good IS/HAS-JUST-GONE Out-of-Date
-				if (Good.Name == "Backstage passes to a TAFKAL80ETC concert" && Good.SellIn < 0)
+				/*if (Good.Name == "Backstage passes to a TAFKAL80ETC concert" && Good.SellIn < 0)
 				{
 					Good.Quality = 0;
 											
-				}
+				}*/
 				
 			}
         }
@@ -82,6 +82,13 @@ namespace GildedRose.Console
 					return BoundedQualityAdjust(Quality, 1);
 				
 				case "Backstage passes to a TAFKAL80ETC concert":
+
+					Quality = BoundedQualityAdjust(Quality, 1);
+					if (SellIn + 1 < 11) Quality = BoundedQualityAdjust(Quality, 1);
+					if (SellIn + 1 < 6) Quality = BoundedQualityAdjust(Quality, 1);
+					if (SellIn < 0) Quality = 0;
+
+					return Quality;
 					/*
 					if (SellIn > 10) return BoundedQualityAdjust(Quality, 1);
 					if (SellIn > 5) return BoundedQualityAdjust(Quality, 2);
@@ -93,7 +100,7 @@ namespace GildedRose.Console
 					if (SellIn < 11) return BoundedQualityAdjust(Quality, 2);
 					return BoundedQualityAdjust(Quality, 1);
 					*/
-					return Quality;
+					//return Quality;
 				
 				default:
 					if (SellIn < 0) return BoundedQualityAdjust(Quality, -2);
