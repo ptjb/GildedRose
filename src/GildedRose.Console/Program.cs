@@ -39,34 +39,19 @@ namespace GildedRose.Console
             foreach (var Good in Stock)
             {
 				//Standard Quality Adjustment
-				/*if (Good.Name != "Aged Brie" && Good.Name != "Backstage passes to a TAFKAL80ETC concert")
-				{
-					if (Good.Quality > 0)
+				
+				if (Good.Name == "Backstage passes to a TAFKAL80ETC concert")
 					{
-						if (Good.Name != "Sulfuras, Hand of Ragnaros")
-						{
-							Good.Quality -= 1;
-						}
-					}
-				}*/
-				if (Good.Name == "Backstage passes to a TAFKAL80ETC concert" && Good.Quality < 50)
-					{
-						Good.Quality += 1;
+						Good.Quality = BoundedQualityAdjust(Good.Quality, 1);
 
 						if (Good.SellIn < 11)
 						{
-							if (Good.Quality < 50)
-							{
-								Good.Quality += 1;
-							}
+							Good.Quality = BoundedQualityAdjust(Good.Quality, 1);
 						}
 
 						if (Good.SellIn < 6)
 						{
-							if (Good.Quality < 50)
-							{
-								Good.Quality += 1;
-							}
+							Good.Quality = BoundedQualityAdjust(Good.Quality, 1);
 						}
 						
 					}
